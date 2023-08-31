@@ -1,5 +1,5 @@
 import { databases } from "@/appwrite"
-import { TypedColumn, Column } from "@/typings";
+import { TypedColumn, Column, Board } from "@/typings";
 import { access } from "fs";
 
 export const getTodosGroupedByColumn = async () => {
@@ -10,6 +10,7 @@ export const getTodosGroupedByColumn = async () => {
 
   const todos = data.documents;
 
+  // transform data from array to key value sorting todos, inprogress, and complete
   const columns = todos.reduce((acc, todo) => {
     if(!acc.get(todo.status)) {
       acc.set(todo.status, {
@@ -29,5 +30,27 @@ export const getTodosGroupedByColumn = async () => {
     return acc;
   }, new Map<TypedColumn, Column>());
 
-  console.log(columns)
+  // if columns does not have inprogress, todo, and done, add them with empty todos
+  const columnTypes: TypedColumn[] = ["todo", "inprogress", "done"];
+  for(const columnType of columnTypes) {
+    if(!columns.get(columnType)) {
+      columns.set(columnType, {
+        id: columnType,
+        todos: [],
+      });
+    }
+  }
+
+  // sort columns by column type
+  const sortedColumns = new Map(
+    Array.from(columns.entries()).sort((a,b)=> (
+      columnTypes.indexOf(a[0]) - columnTypes.indexOf(b[0])
+    ))
+  );
+
+  const board: Board = {
+    columns: sortedColumns
+  }
+
+  return board;
 }
