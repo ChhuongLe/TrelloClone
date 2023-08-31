@@ -1,12 +1,14 @@
+import { Models } from "appwrite";
+
 interface Board {
-  columns: Map<TypedColumn, Column>
+  columns: Map<TypedColumn, Column>;
 }
 
-type TypedColumn = "todo" | "inprogress" | "done"
+type TypedColumn = "todo" | "inprogress" | "done";
 
 interface Column {
-  id: TypedColumn,
-  todos: Todo[]
+  id: TypedColumn;
+  todos: Todo[];
 }
 
 interface Todo {
@@ -19,5 +21,5 @@ interface Todo {
 
 interface Image {
   bucketId: string;
-  fileId: string
+  fileId: string;
 }
