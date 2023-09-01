@@ -72,7 +72,22 @@ const [board, getBoard, setBoardState] = useBoardStore((state) => [
       setBoardState({ ...board, columns: newColumns })
     } else {
       // moved to a different column
+      const movedTodos = Array.from(endCol.todos);
+      movedTodos.splice(destination.index, 0, todoMoved);
 
+      const newColumns = new Map(board.columns);
+      const newCol = {
+        id: startCol.id,
+        todos: newTodos
+      };
+
+      newColumns.set(startCol.id, newCol);
+      newColumns.set(endCol.id, {
+        id: endCol.id,
+        todos: movedTodos,
+      });
+
+      setBoardState({ ...board, columns: newColumns });
     }
   };
   return (
