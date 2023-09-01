@@ -6,10 +6,11 @@ import { useEffect } from 'react';
 import { DragDropContext, Droppable, DropResult} from 'react-beautiful-dnd';
 import Column from './Column';
 function Board () {
-const [board, getBoard, setBoardState] = useBoardStore((state) => [
+const [board, getBoard, setBoardState, updateTodoinDB] = useBoardStore((state) => [
   state.board,
   state.getBoard,
-  state.setBoardState
+  state.setBoardState,
+  state.updateTodoinDB,
 ]);
 
   useEffect(() => {
@@ -86,6 +87,9 @@ const [board, getBoard, setBoardState] = useBoardStore((state) => [
         id: endCol.id,
         todos: movedTodos,
       });
+
+      // update in DB
+      updateTodoinDB(todoMoved, endCol.id);
 
       setBoardState({ ...board, columns: newColumns });
     }
