@@ -1,6 +1,6 @@
 'use client'
 
-import { ViewColumnsIcon } from "@heroicons/react/20/solid";
+import { MinusSmallIcon, ViewColumnsIcon } from "@heroicons/react/20/solid";
 import { useBoardStore } from "../store/BoardStore";
 import { useEffect } from 'react';
 import { DragDropContext, Droppable, DropResult} from 'react-beautiful-dnd';
@@ -33,7 +33,48 @@ const [board, getBoard, setBoardState] = useBoardStore((state) => [
         columns: rearrangedColumns,
       });
     }
-  }
+
+    // handle nested columns
+    // necessary to do this as indexes are stored as (i.e 0,1,2,3... etc)
+    // need to convert it to the id's with Drag and Drop library
+    const columns = Array.from(board.columns);
+    const startColIndex = columns[Number(source.droppableId)];
+    const endColIndex = columns[Number(destination.droppableId)];
+
+    const startCol: Column = {
+      id: startColIndex[0],
+      todos: startColIndex[1].todos,
+    };
+
+    const endCol: Column = {
+      id: endColIndex[0],
+      todos: endColIndex[1].todos,
+    };
+
+    if(!startCol || !endCol) return;
+
+    if(source.index === destination.index && startCol === endCol) return;
+
+    // make a new copy
+    const newTodos = startCol.todos;
+    const [todoMoved] = newTodos.splice(source.index, 1);
+
+    if(startCol.id === endCol.id) {
+      // same col task drag
+      newTodos.splice(destination.index, 0, todoMoved);
+      const newCol = {
+        id: startCol.id,
+        todos: newTodos,
+      };
+      const newColumns = new Map(board.columns);
+      newColumns.set(startCol.id, newCol);
+
+      setBoardState({ ...board, columns: newColumns })
+    } else {
+      // moved to a different column
+
+    }
+  };
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <Droppable droppableId='board' direction='horizontal' type='column'>
