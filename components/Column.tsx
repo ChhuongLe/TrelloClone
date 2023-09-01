@@ -43,7 +43,7 @@ function Column ({ id, todos, index}: Props) {
                   {todos.map((todo, index) => (
                     <Draggable
                       key={todo.$id}
-                      draggableId={todo.$id}
+                      draggableId={todo.$id}z
                       index={index}
                     >
                       {(provided)=>(
