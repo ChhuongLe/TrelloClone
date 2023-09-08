@@ -58,7 +58,7 @@ function Header() {
         <UserCircleIcon className={`inline-block h-10 w-10 text-[#0055D1] mr-1
         ${loading && "animate-spin"}`}/>
         {suggestion && !loading
-          ? suggestion : "GPT is summarizing your day"}
+          ? suggestion : "GPT is summarizing your day..."}
       </p>
     </div>
   </header>

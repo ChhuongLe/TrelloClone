@@ -14,11 +14,11 @@ export async function POST(request: Request) {
     messages: [
       {
         "role": "system",
-        "content": `When responding, welcome the user with a salutation and say welcome. Limit the response to 200 characters.`
+        "content": `When responding, welcome the user with a salutation and say welcome fellow trailblazer. Limit the response to 200 characters.`
       },
       {
         "role": "user",
-        "content": `Hi there, provide a summary of the following todos. Count how many todos there are in each category such as To do, in progress, and done, then tell the user to have a productive day! Here is the data ${JSON.stringify(
+        "content": `Hi there, provide a summary of the following of their tasks. Count how many todos there are in each category such as To do, In progress, and Completed, then tell the user to have a productive day! Here is the data ${JSON.stringify(
           todos
         )}`
       }
