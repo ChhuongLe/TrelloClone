@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from "react"
 import { useBoardStore } from "@/store/BoardStore";
 import { Todo, TypedColumn } from "@/typings";
 import { XCircleIcon } from "@heroicons/react/20/solid";
