@@ -31,7 +31,6 @@ function ToDoCard({ todo, index, id, innerRef, dragHandleProps, draggableProps }
           setImageUrl(url.toString());
         }
       }
-
       fetchImage();
     }
   }, [todo])
