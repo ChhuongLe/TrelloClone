@@ -1,5 +1,5 @@
 import { getTodosGroupedByColumn  } from '@/lib/getTodosGroupedByColumn';
-import { Board, TypedColumn, Column, Todo, Image } from '@/typings';
+import { Board, TypedColumn, aColumn, Todo, Image } from '@/typings';
 import { create } from 'zustand';
 import {databases, storage, ID} from '@/appwrite';
 import uploadImage from '@/lib/uploadImage';
@@ -29,7 +29,7 @@ interface BoardState {
 
 export const useBoardStore = create<BoardState>((set, get) => ({
   board: {
-    columns: new Map<TypedColumn, Column>()
+    columns: new Map<TypedColumn, aColumn>()
   },
 
   searchString: "",

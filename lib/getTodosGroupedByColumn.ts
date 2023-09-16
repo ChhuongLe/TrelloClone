@@ -1,6 +1,5 @@
 import { databases } from "@/appwrite"
-import { TypedColumn, Column, Board } from "@/typings";
-import { access } from "fs";
+import { TypedColumn, aColumn, Board } from "@/typings";
 
 export const getTodosGroupedByColumn = async () => {
   const data = await databases.listDocuments(
@@ -28,7 +27,7 @@ export const getTodosGroupedByColumn = async () => {
     });
 
     return acc;
-  }, new Map<TypedColumn, Column>());
+  }, new Map<TypedColumn, aColumn>());
 
   // if columns does not have inprogress, todo, and done, add them with empty todos
   const columnTypes: TypedColumn[] = ["todo", "inprogress", "done"];

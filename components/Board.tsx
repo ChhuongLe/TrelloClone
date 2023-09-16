@@ -1,9 +1,9 @@
 'use client'
 
-import { MinusSmallIcon, ViewColumnsIcon } from "@heroicons/react/20/solid";
 import { useBoardStore } from "../store/BoardStore";
 import { useEffect } from 'react';
 import { DragDropContext, Droppable, DropResult} from 'react-beautiful-dnd';
+import { aColumn } from "@/typings";
 import Column from './Column';
 function Board () {
 const [board, getBoard, setBoardState, updateTodoinDB] = useBoardStore((state) => [
@@ -42,12 +42,12 @@ const [board, getBoard, setBoardState, updateTodoinDB] = useBoardStore((state) =
     const startColIndex = columns[Number(source.droppableId)];
     const endColIndex = columns[Number(destination.droppableId)];
 
-    const startCol: Column = {
+    const startCol: aColumn = {
       id: startColIndex[0],
       todos: startColIndex[1].todos,
     };
 
-    const endCol: Column = {
+    const endCol: aColumn = {
       id: endColIndex[0],
       todos: endColIndex[1].todos,
     };

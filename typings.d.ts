@@ -6,7 +6,7 @@ interface Board {
 
 type TypedColumn = "todo" | "inprogress" | "done";
 
-interface Column {
+interface aColumn {
   id: TypedColumn;
   todos: Todo[];
 }

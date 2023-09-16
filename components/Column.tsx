@@ -1,6 +1,5 @@
 import { TypedColumn, Todo } from "@/typings";
 import { PlusCircleIcon } from "@heroicons/react/20/solid";
-import { prototype } from "events";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import ToDoCard from "./TodoCard";
 import { useBoardStore } from "@/store/BoardStore";

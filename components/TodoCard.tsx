@@ -5,7 +5,10 @@ import { useEffect, useState } from "react"
 import { useBoardStore } from "@/store/BoardStore";
 import { Todo, TypedColumn } from "@/typings";
 import { XCircleIcon } from "@heroicons/react/20/solid";
-import { DraggableProvidedDraggableProps } from "react-beautiful-dnd";
+import {
+  DraggableProvidedDraggableProps,
+  DraggableProvidedDragHandleProps
+ } from "react-beautiful-dnd";
 import getUrl from "@/lib/getUrl";
 
 
@@ -15,7 +18,7 @@ type Props = {
   id: TypedColumn;
   innerRef: (element: HTMLElement | null) => void;
   draggableProps: DraggableProvidedDraggableProps;
-  dragHandleProps: DraggableProvidedDraggableProps | null | undefined;
+  dragHandleProps: DraggableProvidedDragHandleProps  | null | undefined;
 }
 
 function ToDoCard({ todo, index, id, innerRef, dragHandleProps, draggableProps }: Props) {
