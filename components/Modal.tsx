@@ -9,7 +9,7 @@ import TaskTypeRadioGroup from './TaskTypeRadioGroup'
 import { PhotoIcon } from '@heroicons/react/20/solid'
 
 function Modal() {
-  const imagePickerRef=useRef<HTMLInputElement>(null);
+  const imagePickerRef = useRef<HTMLInputElement>(null);
   const [addTask, image, setImage, newTaskInput, setNewTaskInput, newTaskType] = useBoardStore((state)=>[
     state.addTask,
     state.image,
@@ -27,15 +27,12 @@ function Modal() {
     e.preventDefault();
     if(!newTaskInput) return;
 
-    //add task
-
     addTask(newTaskInput, newTaskType, image);
     setImage(null);
     closeModal();
   }
 
   return (
-    // Use the `Transition` component at the root level
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         onSubmit={handleSubmit}
@@ -54,9 +51,6 @@ function Modal() {
             >
               <div className="fixed inset-0 bg-black bg-opacity-25" />
         </Transition.Child>
-        {/*
-          Use one Transition.Child to apply one transition to the backdrop...
-        */}
         <div className="fixed inset-0 overflow-y-auto">
           <div className='flex min-h-full items-center justify-center p-4 text-center'>
               <Transition.Child
@@ -84,8 +78,7 @@ function Modal() {
                   />
                 </div>
                 <TaskTypeRadioGroup />
-
-                <div className='mt-2'>
+                <div>
                   <button
                     type="button"
                     onClick={()=>{
@@ -100,21 +93,23 @@ function Modal() {
                       alt="Uploaded Image"
                       width={200}
                       height={200}
-                      className='w-full h-44 object-cover mt-2 hover:grayscale transition-all duration-150 cursor-not-allowed'
+                      className='w-full h-44 object-cover mt-2 filter hover:grayscale transition-all duration-150 cursor-not-allowed'
                       src={URL.createObjectURL(image)}
                       onClick={() => {
                         setImage(null)
+                        console.log("clicked")
                       }}
                     />
                   )}
+
                   <input
-                  type="file"
-                  ref={imagePickerRef}
-                  hidden
-                  onChange={(e) => {
-                    if(!e.target.files![0].type.startsWith("/image")) return;
-                    setImage(e.target.files![0]);
-                  }}
+                    type="file"
+                    ref={imagePickerRef}
+                    hidden
+                    onChange={(e) => {
+                      if(!e.target.files![0].type.startsWith("image/")) return;
+                      setImage(e.target.files![0]);
+                    }}
                   />
                 </div>
                 <div className='mt-4'>
