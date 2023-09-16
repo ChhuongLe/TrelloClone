@@ -97,7 +97,6 @@ function Modal() {
                       src={URL.createObjectURL(image)}
                       onClick={() => {
                         setImage(null)
-                        console.log("clicked")
                       }}
                     />
                   )}

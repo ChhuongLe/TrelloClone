@@ -18,7 +18,7 @@ const types = [
     color: "bg-yellow-500",
   },
   {
-    id: "completed",
+    id: "done",
     name: "Completed",
     description: "A task that has been completed",
     color: "bg-green-500",
