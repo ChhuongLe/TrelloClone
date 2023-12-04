@@ -45,6 +45,7 @@ Users will also have the ability to add an image of their choice that matches th
 * [![React][React.js]][React-url]
 * [![TailwindCSS][TailwindCSS]][Tailwind-url]
 * [![gpt][gpt]][gpt-url]
+*[![Appwrite][Appwrite]][Appwrite-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,9 +117,9 @@ No examples yet, To Be Edited later
 <!-- CONTACT -->
 ## Contact
 
-Chhuong Le - chhuongcle@gmail.com
+Chhuong Le: chhuongcle@gmail.com
 
-Project Link: [https://github.com/ChhuongLe/Dropbox-Clone](https://github.com/ChhuongLe/Dropbox-Clone)
+Project Link: [https://github.com/ChhuongLe/TrelloClone](https://github.com/ChhuongLe/TrelloClone)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,12 +128,13 @@ Project Link: [https://github.com/ChhuongLe/Dropbox-Clone](https://github.com/Ch
 
 Useful resources that were used in this build
 
-* [React Drop Zone](https://react-dropzone.js.org/)
-* [Shadcn/ui](https://ui.shadcn.com/)
-* [Clerk](https://clerk.com/)
 * [NextJS](https://nextjs.org/)
 * [TailwindCSS](https://tailwindcss.com/)
-* [Pretty Bytes](https://www.npmjs.com/package/pretty-bytes)
+* [React-Beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
+*[Appwrite](https://appwrite.io/)
+*[OpenAI - GPT 3.5 turbo](https://platform.openai.com/docs/overview)
+*[Zustand](https://github.com/pmndrs/zustand)
+*[React Hero Icons](https://heroicons.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
