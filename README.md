@@ -45,7 +45,7 @@ Users will also have the ability to add an image of their choice that matches th
 * [![React][React.js]][React-url]
 * [![TailwindCSS][TailwindCSS]][Tailwind-url]
 * [![gpt][gpt]][gpt-url]
-*[![Appwrite][Appwrite]][Appwrite-url]
+* [![Appwrite][Appwrite]][Appwrite-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -131,10 +131,10 @@ Useful resources that were used in this build
 * [NextJS](https://nextjs.org/)
 * [TailwindCSS](https://tailwindcss.com/)
 * [React-Beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
-*[Appwrite](https://appwrite.io/)
-*[OpenAI - GPT 3.5 turbo](https://platform.openai.com/docs/overview)
-*[Zustand](https://github.com/pmndrs/zustand)
-*[React Hero Icons](https://heroicons.com/)
+* [Appwrite](https://appwrite.io/)
+* [OpenAI - GPT 3.5 turbo](https://platform.openai.com/docs/overview)
+* [Zustand](https://github.com/pmndrs/zustand)
+* [React Hero Icons](https://heroicons.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
