@@ -79,13 +79,13 @@ _Below is an example of how you can instruct your audience on installing and set
    npm install
    ```
 3. Head over to https://cloud.appwrite.io/ and create an account then follow these steps to create the backend and get the ID's:
-  - Create a new project, store the project id into an env variable
-  -  Click onto Databases and create a new App Database and store the Database ID into an env variable
-  - Create a collection and store the collection id into an env variable
+  * Create a new project, store the project id into an env variable
+  *  Click onto Databases and create a new App Database and store the Database ID into an env variable
+  * Create a collection and store the collection id into an env variable
 4. Head over to https://platform.openai.com/apps and create an account
-  - Select the API option
-  - Follow the doctumentation to install open AI
-  - Create an API key and store that into the env file
+  * Select the API option
+  * Follow the doctumentation to install open AI
+  * Create an API key and store that into the env file
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
