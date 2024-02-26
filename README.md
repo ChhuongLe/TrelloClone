@@ -111,6 +111,7 @@ No examples yet, To Be Edited later
 - [x] Add function to add image to tasks
 - [x] Deploy on production
 - [ ] Add authentication to allow users to sign in and view only their tasks
+- [ ] Add ability to edit tickets when it already has been posted
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
